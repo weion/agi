@@ -1,0 +1,156 @@
+++ date
++ echo -e '\n=================>> Mon Sep 16 09:30:02 EDT 2013 <<==================='
+
+=================>> Mon Sep 16 09:30:02 EDT 2013 <<===================
++ _main
++ echo -e 'function:\t _main'
+function:	 _main
++ echo -e ----------------------
+----------------------
++ URI=
++ [[ ! -f //agifs/it/itops/ecom_webstore/images_check/v2///agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv ]]
++ echo -e 'Info: Extract Product_Code/Image_Name: //agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv'
+Info: Extract Product_Code/Image_Name: //agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv
++ awk '-F","' '{ if ($3 !="" && $10 !="") print $3"\t"$10 }' '//agiecom07/c$/data/web_metrics/responsys/EPCMF_90386345_20130916.csv'
++ awk '{ print $1"\t"$2 }'
+awk: fatal: cannot open file `//agiecom07/c$/data/web_metrics/responsys/EPCMF_90386345_20130916.csv' for reading (No such file or directory)
++ echo -e 'Info: Sorting: //agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv to //agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv_sorted ...'
+Info: Sorting: //agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv to //agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv_sorted ...
++ cat /dev/null
++ /usr/bin/sort //agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv
++ echo -e 'Missing Images:\n--------------\n'
+++ echo items zoom thumb
++ for i in '$(echo $IMG_TYPE)'
++ echo -e ''\''items'\'' images:\n--------------'
++ [[ items == \i\t\e\m\s ]]
++ URI=/images/items
++ echo -e '\nInfo: URI=/images/items'
+
+Info: URI=/images/items
++ _generate_image_filename '//agiecom05/c$/inetpub/webstore//images/items' items
++ echo -e 'function:\t _generate_image_filename'
+function:	 _generate_image_filename
++ echo -e -----------------------------------------
+-----------------------------------------
++ [[ ! -f //agifs/it/itops/ecom_webstore/images_check/v2/data/items.txt ]]
++ [[ -n `find "${SCRIPT_PATH}/data/$2.txt" -mmin "+$FILE_AGE"` ]]
++ echo -e 'Info: Extracting Image Filenames: //agifs/it/itops/ecom_webstore/images_check/v2/data/items.txt\n'
+Info: Extracting Image Filenames: //agifs/it/itops/ecom_webstore/images_check/v2/data/items.txt
+
++ ls '//agiecom05/c$/inetpub/webstore//images/items'
++ sort
++ echo -e 'Info: Completed Extracting Image Filenames: //agifs/it/itops/ecom_webstore/images_check/v2/data/items.txt\n'
+Info: Completed Extracting Image Filenames: //agifs/it/itops/ecom_webstore/images_check/v2/data/items.txt
+
++ return
++ [[ filename == \f\i\l\e\n\a\m\e ]]
++ _validate_image_filename items
++ echo -e 'function:\t _validate_image_filename'
+function:	 _validate_image_filename
++ echo -e -------------------------------------------
+-------------------------------------------
++ echo -e 'Info: Parsing/Searching For Matching Images: //agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv_sorted and items.txt ...'
+Info: Parsing/Searching For Matching Images: //agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv_sorted and items.txt ...
++ awk 'BEGIN { c=0; c1=0 } { if(FNR==NR) {a[$1]=$2;next} {for (i in a) {if($1 == a[i]) {c++; b[i]=$1;printf "."}}} } END { print "."; for(j in b) {c1++; print j"\t"b[j]}; print "Total: " c1}' //agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv_sorted //agifs/it/itops/ecom_webstore/images_check/v2/data/items.txt
++ tail -n+2
++ head -n-1
++ sort
++ comm -3 //agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv_sorted //agifs/it/itops/ecom_webstore/images_check/v2/tmp/items.txt_match_n_sorted
++ tee -a //agifs/it/itops/ecom_webstore/images_check/v2/data/404_images.txt
+++ egrep -i '\.jpg' //agifs/it/itops/ecom_webstore/images_check/v2/data/404_images.txt
+++ wc -l
++ NUM_BADBOY=0
++ echo -e '------------------------------------\n'
++ echo -e 'Info: Completed Parsing/Searching For Matching Images:  and items.txt.'
+Info: Completed Parsing/Searching For Matching Images:  and items.txt.
++ for i in '$(echo $IMG_TYPE)'
++ echo -e ''\''zoom'\'' images:\n--------------'
++ [[ zoom == \i\t\e\m\s ]]
++ [[ zoom == \z\o\o\m ]]
++ echo 'Info: URI=/images/items/zoom'
+Info: URI=/images/items/zoom
++ _generate_image_filename '//agiecom05/c$/inetpub/webstore//images/items' zoom
++ echo -e 'function:\t _generate_image_filename'
+function:	 _generate_image_filename
++ echo -e -----------------------------------------
+-----------------------------------------
++ [[ ! -f //agifs/it/itops/ecom_webstore/images_check/v2/data/zoom.txt ]]
++ [[ -n `find "${SCRIPT_PATH}/data/$2.txt" -mmin "+$FILE_AGE"` ]]
++ echo -e 'Info: Extracting Image Filenames: //agifs/it/itops/ecom_webstore/images_check/v2/data/zoom.txt\n'
+Info: Extracting Image Filenames: //agifs/it/itops/ecom_webstore/images_check/v2/data/zoom.txt
+
++ ls '//agiecom05/c$/inetpub/webstore//images/items'
++ sort
++ echo -e 'Info: Completed Extracting Image Filenames: //agifs/it/itops/ecom_webstore/images_check/v2/data/zoom.txt\n'
+Info: Completed Extracting Image Filenames: //agifs/it/itops/ecom_webstore/images_check/v2/data/zoom.txt
+
++ return
++ [[ filename == \f\i\l\e\n\a\m\e ]]
++ _validate_image_filename zoom
++ echo -e 'function:\t _validate_image_filename'
+function:	 _validate_image_filename
++ echo -e -------------------------------------------
+-------------------------------------------
++ echo -e 'Info: Parsing/Searching For Matching Images: //agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv_sorted and zoom.txt ...'
+Info: Parsing/Searching For Matching Images: //agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv_sorted and zoom.txt ...
++ awk 'BEGIN { c=0; c1=0 } { if(FNR==NR) {a[$1]=$2;next} {for (i in a) {if($1 == a[i]) {c++; b[i]=$1;printf "."}}} } END { print "."; for(j in b) {c1++; print j"\t"b[j]}; print "Total: " c1}' //agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv_sorted //agifs/it/itops/ecom_webstore/images_check/v2/data/zoom.txt
++ tail -n+2
++ head -n-1
++ sort
++ comm -3 //agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv_sorted //agifs/it/itops/ecom_webstore/images_check/v2/tmp/zoom.txt_match_n_sorted
++ tee -a //agifs/it/itops/ecom_webstore/images_check/v2/data/404_images.txt
+++ egrep -i '\.jpg' //agifs/it/itops/ecom_webstore/images_check/v2/data/404_images.txt
+++ wc -l
++ NUM_BADBOY=0
++ echo -e '------------------------------------\n'
++ echo -e 'Info: Completed Parsing/Searching For Matching Images:  and zoom.txt.'
+Info: Completed Parsing/Searching For Matching Images:  and zoom.txt.
++ for i in '$(echo $IMG_TYPE)'
++ echo -e ''\''thumb'\'' images:\n--------------'
++ [[ thumb == \i\t\e\m\s ]]
++ [[ thumb == \z\o\o\m ]]
++ [[ thumb == \t\h\u\m\b ]]
++ echo 'Info: URI=/images/items/thumb'
+Info: URI=/images/items/thumb
++ _generate_image_filename '//agiecom05/c$/inetpub/webstore//images/items' thumb
++ echo -e 'function:\t _generate_image_filename'
+function:	 _generate_image_filename
++ echo -e -----------------------------------------
+-----------------------------------------
++ [[ ! -f //agifs/it/itops/ecom_webstore/images_check/v2/data/thumb.txt ]]
++ [[ -n `find "${SCRIPT_PATH}/data/$2.txt" -mmin "+$FILE_AGE"` ]]
++ echo -e 'Info: Extracting Image Filenames: //agifs/it/itops/ecom_webstore/images_check/v2/data/thumb.txt\n'
+Info: Extracting Image Filenames: //agifs/it/itops/ecom_webstore/images_check/v2/data/thumb.txt
+
++ ls '//agiecom05/c$/inetpub/webstore//images/items'
++ sort
++ echo -e 'Info: Completed Extracting Image Filenames: //agifs/it/itops/ecom_webstore/images_check/v2/data/thumb.txt\n'
+Info: Completed Extracting Image Filenames: //agifs/it/itops/ecom_webstore/images_check/v2/data/thumb.txt
+
++ return
++ [[ filename == \f\i\l\e\n\a\m\e ]]
++ _validate_image_filename thumb
++ echo -e 'function:\t _validate_image_filename'
+function:	 _validate_image_filename
++ echo -e -------------------------------------------
+-------------------------------------------
++ echo -e 'Info: Parsing/Searching For Matching Images: //agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv_sorted and thumb.txt ...'
+Info: Parsing/Searching For Matching Images: //agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv_sorted and thumb.txt ...
++ awk 'BEGIN { c=0; c1=0 } { if(FNR==NR) {a[$1]=$2;next} {for (i in a) {if($1 == a[i]) {c++; b[i]=$1;printf "."}}} } END { print "."; for(j in b) {c1++; print j"\t"b[j]}; print "Total: " c1}' //agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv_sorted //agifs/it/itops/ecom_webstore/images_check/v2/data/thumb.txt
++ tail -n+2
++ head -n-1
++ sort
++ comm -3 //agifs/it/itops/ecom_webstore/images_check/v2/tmp/tmp.csv_sorted //agifs/it/itops/ecom_webstore/images_check/v2/tmp/thumb.txt_match_n_sorted
++ tee -a //agifs/it/itops/ecom_webstore/images_check/v2/data/404_images.txt
+++ egrep -i '\.jpg' //agifs/it/itops/ecom_webstore/images_check/v2/data/404_images.txt
+++ wc -l
++ NUM_BADBOY=0
++ echo -e '------------------------------------\n'
++ echo -e 'Info: Completed Parsing/Searching For Matching Images:  and thumb.txt.'
+Info: Completed Parsing/Searching For Matching Images:  and thumb.txt.
++ echo -e 'Total: Bad URL(s)=0'
++ '[' 0 -ne 0 ']'
+++ date
++ echo -e '\n=================>> Mon Sep 16 09:30:14 EDT 2013 <<==================='
+
+=================>> Mon Sep 16 09:30:14 EDT 2013 <<===================
